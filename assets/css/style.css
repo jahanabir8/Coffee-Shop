@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito:wght@200;300;400;500;600&display=swap');
+/* =====font here===== */
 
 :root{
    --main-color:#be9c79;
@@ -41,6 +42,91 @@
 }
 /* ==========scroll up button end here========== */
 
+/* =========swiper slider start=============== */
+.swiper {
+   width: 100%;
+   height: 100%;
+ }
+
+ .swiper-slide {
+   text-align: center;
+   font-size: 18px;
+   background: #fff;
+
+   /* Center slide text vertically */
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   -webkit-align-items: center;
+   align-items: center;
+ }
+
+ .swiper-slide img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+ }
+
+ .swiper-button-prev {
+   left: 2px;
+   visibility: hidden;
+   opacity: 0;
+   transition: all 0.3s ease-in-out;
+}
+
+.swiper-button-next {
+   right: 2px;
+   visibility: hidden;
+   opacity: 0;
+   transition: all 0.3s ease-in-out;
+}
+
+.swiper-button-prev{
+   left: 20px;
+   visibility: visible;
+   opacity: 0;
+   left: -5px;
+}
+
+.swiper-button-next{
+   right: 20px;
+   visibility: visible;
+   opacity: 0;
+   right: -5px;
+}
+
+ .swiper-button-prev, .swiper-button-next {
+   height: 50px;
+   width: 50px;
+   border-radius: 50%;
+   color: var(--main-color);
+   background-color: transparent;
+   box-shadow: 0 0 0 5px rgb(201 164 132 / 90%);
+}
+
+.swiper-button-prev:after, .swiper-button-next::after {
+   font-size: 15px;
+   font-weight: bold;
+}
+
+.home-bg:hover .swiper-button-next{
+   right: 20px;
+   opacity: 1;
+}
+.home-bg:hover .swiper-button-prev{
+   left: 20px;
+   opacity: 1;
+}
+/* =========swiper slider end================= */
+
 
 *{
    font-family: 'Nunito', sans-serif;
@@ -49,6 +135,11 @@
    outline: none; border:none;
    text-decoration: none;
    text-transform: capitalize;
+}
+
+p{
+   font-family: var(--font-family-para);
+   font-weight: 500;
 }
 
 *::selection{
@@ -68,6 +159,8 @@
 ::-webkit-scrollbar-thumb{
    background-color: var(--main-color);
 }
+
+
 
 html{
    font-size: 62.5%;
@@ -110,6 +203,7 @@ section{
 
 .btn:hover{
    background-color: var(--black);
+   color: #ffffff;
 }
 
 .header{
@@ -118,6 +212,7 @@ section{
    background-color: var(--white);
    box-shadow: var(--box-shadow);
    z-index: 1000;
+   padding: 20px;
 }
 
 .header .flex{
@@ -125,7 +220,6 @@ section{
    align-items: center;
    justify-content: space-between;
    position: relative;
-   padding:1.5rem 2rem;
 }
 
 .header .flex .logo img{
@@ -149,14 +243,6 @@ section{
    font-size: 2.5rem;
    color:var(--black);
    cursor: pointer;
-}
-
-.home-bg{
-   background:linear-gradient(90deg, var(--white), transparent 70%), url(../images/home-bg.jpg) no-repeat;
-   background-size: cover;
-   background-position: center;
-   height: 90vh;
-   object-fit: cover;
 }
 
 .home-bg .home{
@@ -184,89 +270,98 @@ section{
    font-family: var(--font-family-para);
 }
 
-.about{
-   display: flex;
-   align-items: center;
-   flex-wrap: wrap;
-   gap:4rem;
+/* ===========================================
+         about section start here
+=============================================*/
+.about__section{
+   margin: 100px 0;
 }
 
-.about .image{
-   flex:1 1 40rem;
-}
-
-.about .image img{
+.about__section .image__section img{
    width: 100%;
 }
 
-.about .content{
-   flex:1 1 40rem;
-}
 
-.about .content h3{
+.about__section .content__section h3{
    font-size: 4.5rem;
    color:var(--black);
    font-family: 'Merienda One', cursive;
    padding-bottom: 1rem;
 }
 
-.about .content p{
+.about__section .content__section p{
    padding:1rem 0;
    line-height: 2;
    color:var(--light-color);
    font-size: 1.5rem;
 }
 
-.facility .box-container{
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-   gap:1.5rem;
-   align-items: flex-start;
-}
+/* ===========================================
+         about section end here
+=============================================*/
 
-.facility .box-container .box{
+
+/* ===========================================
+         facility section start here
+=============================================*/
+.facility__section .facility__content .box {
    text-align: center;
 }
 
-
-.facility .box-container .box img{
-   height: 10rem;
-   margin-bottom: .5rem;
-}
-
-.facility .box-container .box h3{
+.facility__section .facility__content .box h3{
    font-size: 2rem;
    color:var(--black);
-   margin:1rem 0;
+   margin:16px 0;
+   font-weight: 600;
 }
 
-.facility .box-container .box p{
+.facility__section .facility__content .box p{
    line-height: 2;
    font-size: 1.5rem;
    color:var(--light-color);
 }
 
-.menu .box-container{
-   display: grid;
-   grid-template-columns: repeat(auto-fit, 30rem);
-   gap:2rem;
-   align-items: flex-start;
-   justify-content: center;
+/* ===========================================
+         facility section end here
+=============================================*/
+
+
+/* ===========================================
+         menu section start here
+=============================================*/
+.menu__section{
+   margin: 100px 0;
 }
 
-.menu .box-container .box{
+.menu__section .menu__inner .box{
    text-align: center;
+   margin-bottom: 2rem;
+   padding: 20px;
+   background-color: var(--main-color);
+   border-radius: 15px;
 }
 
-.menu .box-container .box img{
+.menu__section .menu__inner .box img{
    width: 100%;
-   margin-bottom: 1rem;
+   margin-bottom: 8px;
 }
 
-.menu .box-container .box h3{
+.menu__section .menu__inner .box h3{
    font-size: 2rem;
    color:var(--black);
+   margin-bottom: 10px;
+   color: #fff;
 }
+
+.menu__section .menu__inner .box p{
+   font-size: 18px;
+   font-size: 14px;
+   color: #fff;
+}
+
+/* ===========================================
+         menu section end here
+=============================================*/
 
 .gallery .box-container{
    display: grid;
@@ -303,35 +398,24 @@ section{
    color:var(--black);
 }
 
-.contact .row{
-   display: flex;
-   align-items: center;
-   flex-wrap: wrap;
-   gap:2rem;
-}
-
-.contact .row .image{
-   flex:1 1 50rem;
-}
-
-.contact .row .image img{
+.contact .contact__here .image img{
    width: 100%;
 }
 
-.contact .row form{
+.contact .contact__here form{
    flex:1 1 30rem;
    border:var(--border);
    padding:2rem;
    text-align: center;
 }
 
-.contact .row form h3{
+.contact .contact__here form h3{
    font-size: 2.5rem;
    margin-bottom: 1rem;
    color:var(--black);
 }
 
-.contact .row form .box{
+.contact .contact__here form .box{
    width: 100%;
    padding:1.4rem;
    font-size: 1.8rem;

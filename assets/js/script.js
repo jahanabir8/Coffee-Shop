@@ -11,6 +11,21 @@ window.onscroll = () =>{
    navbar.classList.remove('active');
 }
 
+// swiper slider
+
+var swiper = new Swiper(".mySwiper", {
+   navigation: {
+     nextEl: ".swiper-button-next",
+     prevEl: ".swiper-button-prev",
+   },
+   loop: true,
+   // autoplay: {
+   //   delay: 2500,
+   //   disableOnInteraction: false,
+   // },
+   // speed: 1000
+ });
+
 
 // nav bar sticky
 $(window).scroll(function(){
